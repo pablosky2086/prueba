@@ -1,0 +1,335 @@
+import java.util.Scanner;
+
+//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
+// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+public class BoletinUD4 {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int opcion;
+        do {
+            sc.nextLine();
+            sc.nextLine();
+            menu();
+            opcion = sc.nextInt();
+            switch (opcion) {
+                case 1:
+                    ejercicio1();
+                    break;
+                case 2:
+                    ejercicio2();
+                    break;
+                case 3:
+                    ejercicio3();
+                    break;
+                case 4:
+                    ejercicio4();
+                    break;
+                case 5:
+                    ejercicio5();
+                    break;
+                case 6:
+                    ejercicio6();;
+                    break;
+                case 71:
+                    ejercicio7p1();
+                    break;
+                case 72:
+                    ejercicio7p2();
+                    break;
+                case 8:
+                    ejercicio8();
+                    break;
+                case 9:
+                    ejercicio9();
+                    break;
+                case 10:
+                    ejercicio10();
+                    break;
+                case 11:
+                    ejercicio11();
+                    break;
+                case 12:
+                    ejercicio12();
+                    break;
+                case 13:
+                    ejercicio13();
+                    break;
+            }
+        }while (opcion != 0);
+    }
+    public static void menu() {
+        System.out.println("¿Qué quieres hacer? ");
+        System.out.println("1. Ejercicio 1");
+        System.out.println("2. Ejercicio 2");
+        System.out.println("3. Ejercicio 3");
+        System.out.println("4. Ejercicio 4");
+        System.out.println("5. Ejercicio 5");
+        System.out.println("6. Ejercicio 6");
+        System.out.println("71. Ejercicio 7 Parte 1");
+        System.out.println("72. Ejercicio 7 Parte 1");
+        System.out.println("8. Ejercicio 8");
+        System.out.println("9. Ejercicio 9");
+        System.out.println("10. Ejercicio 10");
+        System.out.println("11. Ejercicio 11");
+        System.out.println("12. Ejercicio 12");
+        System.out.println("13. Ejercicio 13");
+        System.out.print("Introduce opcion: ");
+    }
+    public static void ejercicio1(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Introduce el numero secreto");
+        int snum = sc.nextInt();
+        if (snum == 241){
+            System.out.println("Has acertado");
+        }
+        else {
+            System.out.println("Has fallado");
+        }
+    }
+    public static void ejercicio2() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Dime tu nota puede ir del 0 al 10");
+        double nota = sc.nextDouble();
+        if (nota >= 9 && nota <= 10) {
+            System.out.println("Tu nota es excelente");
+        }
+        else{
+            if (nota >=6.5 && nota < 9){
+                System.out.println("Tu nota es un notable");
+            }
+            else{
+                if (nota >=5 && nota < 6.5) {
+                    System.out.println("Tu nota esta aprobada");
+                }
+                else{
+                    System.out.println("Has suspendido");
+                }
+            }
+        }
+    }
+    public static void ejercicio3(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Dime un numero");
+        int num1 = sc.nextInt();
+        System.out.println("Dime otro numero");
+        int num2 = sc.nextInt();
+        System.out.println("La suma de los dos numeros es: " + (num1 + num2));
+        System.out.println("La resta de los dos numeros es: " + (num1 - num2));
+        System.out.println("La division de los dos numeros es: " + (num1 * num2));
+        if (num1 == 0 || num2 == 0) {
+            System.out.println("Error no se puede dividir por 0");
+        }
+        else{
+            System.out.println(num1 + "/" + num2 + " es igual a " + (num1 / num2));
+        }
+    }
+    public static void ejercicio4(){
+        for (int i = 0; i <= 100 ; i++){
+            System.out.printf("_");
+        }
+    }
+    public static void ejercicio5(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Cuantas veces quiere que se repita el bucle");
+        int n = sc.nextInt();
+        for (int i = 0; i <= n ; i++){
+            System.out.printf("_");
+        }
+    }
+    public static void ejercicio6(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Cuantas veces quiere que se repita el bucle");
+        int n = sc.nextInt();
+        for (int i = 0; i <= 10 ; i++){
+            System.out.println(n + " x " + i + " = " + (n*i));
+        }
+    }
+    public static void ejercicio7p1(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Dime un numero");
+        int n = sc.nextInt();
+        int suma = 0;
+        for (int i=0; i<=n; i++){
+            if (i % 3 == 0){
+                suma = suma + i;
+            }
+        }
+        System.out.println("El resultado de todas los multiplos de 3 es " + suma );
+    }
+    public static void ejercicio7p2(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Dime un numero");
+        int n = sc.nextInt();
+        int suma = 0;
+        int multiplo = 0;
+        for (int i = 0; i<= n; i++){
+            while (multiplo <= n){
+                multiplo = i*3;
+                suma = suma+multiplo;
+            }
+        }
+        System.out.println("El resultado de todas los multiplos de 3 es " + suma);
+    }
+    public static void ejercicio8(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Dime el precio de tu producto, si su precio es superior a 100€ se le aplicara un descuento del 10%");
+        double precio = sc.nextDouble();
+        if (precio >= 100){
+            precio = precio * 0.9;
+            System.out.println("Aplicando el descuento tu producto pasa a valer " + precio + "€");
+        }
+        else{
+            System.out.println("A tu producto no se le aplica descuento pues no alcanza el precio minimo");
+        }
+    }
+    public static void ejercicio9(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Dime el precio de tu producto, si su precio es inferior a 30 se cobrara una comision de 2");
+        double precio = sc.nextDouble();
+        if (precio <= 30){
+            precio = precio + 2;
+            System.out.println("Aplicando la comision tu producto pasa a valer " + precio);
+        }
+        else{
+            System.out.println("A tu producto no se le aplica la comision pues supera el precio maximo");
+        }
+    }
+    public static void ejercicio10() {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Dime tu nota");
+        int nota = sc.nextInt();
+        if (nota >= 0 && nota < 3) {
+            System.out.println("Tu nota es muy deficiente");
+        }
+        else{
+            if (nota >=3 && nota < 5){
+                System.out.println("Tu nota es insuficiente");
+            }
+            else{
+                if (nota >=5 && nota < 6) {
+                    System.out.println("Tu nota esta bien");
+                }
+                else{
+                    if (nota >= 6 && nota < 9) {
+                        System.out.println("Felicidades tienes un notable");
+                    }
+                    else{
+                        if (nota >= 9 && nota <= 10) {
+                            System.out.println("Enorabuena tienes un sobresaliente");
+                        }
+                    }
+                }
+            }
+        }
+    }
+    public static void ejercicio11(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Dime tu nombre");
+        String nombre = sc.nextLine();
+        System.out.println("Dime las horas que trabajas");
+        int horas = sc.nextInt();
+        System.out.println("Dime tu tarifa por hora");
+        int tarifa = sc.nextInt();
+        double salariobruto = 0;
+        double salarioneto = 0;
+        if (horas > 35){
+            salariobruto = tarifa*35 + (horas - 35)*tarifa*1.5;
+        }
+        else {
+            salariobruto = tarifa * horas;
+        }
+        if (salariobruto > 900){
+            salarioneto = 500 + 300 + (salariobruto-900) * 0.55;
+        } else if (salariobruto<900 && salariobruto>500) {
+            salarioneto = 500  + (salariobruto-500) * 0.75;
+        }
+        else {
+            salarioneto = salariobruto;
+        }
+        System.out.println(nombre + " tu salario bruto es de " + salariobruto + " el total de tus tasas han sido de " + (salariobruto-salarioneto) + " y tu salario neto final es de " + salarioneto);
+    }
+    public static void ejercicio12() {
+        Scanner sc = new Scanner(System.in);
+        int aprobados = 0;
+        int suspensos = 0;
+        double nota;
+        do {
+            System.out.println("Dime una nota");
+            nota = sc.nextDouble();
+            if(nota < 5){
+                suspensos++;
+            }
+            else if (nota < 10){
+                aprobados++;
+            }
+            else{
+                nota = 10;
+            }
+        }while (nota > 0);
+        System.out.println("Hay " + aprobados + " aprobados y " + suspensos + " suspensos");
+    }
+    public static void ejercicio13() {
+        Scanner sc = new Scanner(System.in);
+        int opcion;
+        String opcionletra;
+        do {
+            System.out.println("""
+                   \n> Emulador Calculadora
+                    Elige una opción:
+                    1.- Operaciones básicas.
+                    2.- Operaciones complejas.
+                    3.- Salir.
+                    """);
+            opcion = sc.nextInt();
+            switch (opcion) {
+                case 1:
+                    System.out.println("""
+                            a. Suma.
+                            b. Resta.
+                            c. Producto.
+                            d. División.
+                            """);
+                    sc.nextLine();
+                    opcionletra = sc.nextLine();
+                    System.out.println("Di los numeros separados por un intro");
+                    double num1 = sc.nextDouble();
+                    double num2 = sc.nextDouble();
+                    switch (opcionletra) {
+                        case "a":
+                            System.out.println(num1 + " + " + num2 + " es " + (num1+num2));
+                            break;
+                        case "b":
+                            System.out.println(num1 + " - " + num2 + " es " + (num1-num2));
+                            break;
+                        case "c":
+                            System.out.println(num1 + " x " + num2 + " es " + (num1*num2));
+                            break;
+                        case "d":
+                            System.out.println(num1 + " / " + num2 + " es " + (num1/num2));
+                            break;
+                    }
+                    break;
+                case 2:
+                    System.out.println("""
+                            a. Potencia.
+                            b. Raíz cuadrada.
+                            """);
+                    sc.nextLine();
+                    opcionletra = sc.nextLine();
+                    switch (opcionletra) {
+                        case "a":
+                            System.out.println("Di los numeros separados por un intro");
+                            double num3 = sc.nextDouble();
+                            double num4 = sc.nextDouble();
+                            System.out.println(num3 + " elevado a " + num4 + " es " + Math.pow(num3, num4));
+                            break;
+                        case "b":
+                            double num5 = sc.nextDouble();
+                            System.out.println("La raiz cuadrada de " + num5 + " es " + (Math.sqrt(num5)));
+                            break;
+                    }
+                    break;
+            }
+        }while (opcion != 3);
+    }
+}
